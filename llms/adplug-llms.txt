@@ -1,0 +1,101 @@
+# AdPlug
+
+> AdPlug is the Marketing Control Plane that connects Google Ads, LinkedIn Ads, Microsoft Ads, and Google Search Console to Claude, ChatGPT, Cursor, and other Model Context Protocol (MCP) compatible AI tools. PPC specialists and agencies plug their ad accounts in once, then run audits, reports, weekly checks, and previewed account changes from the AI they already use, instead of opening another dashboard.
+
+Last updated: 2026-09-07.
+
+## About
+
+AdPlug is built by Daniel Popa, a performance marketer with 10+ years in PPC and $100M+ in managed ad spend, who runs a consultancy managing Google Ads and LinkedIn Ads accounts. The product is opinionated: read-only by default, write actions gated behind a preview-confirm-execute flow, every tool call recorded with user, account, action, parameters, and timestamp. Hosted, no servers to run. Full story at https://adplug.app/about.
+
+- Founder: Daniel Popa, https://adplug.app/about (LinkedIn: https://www.linkedin.com/in/danielpopamd)
+- GitHub: https://github.com/danielpopamd
+
+## Pages
+
+- [Home](https://adplug.app): Plug your ads into AI. The MCP that turns Claude, ChatGPT, and Cursor into a marketing agent for paid media.
+- [Integrations](https://adplug.app/integrations): Google Ads, LinkedIn Ads, Microsoft Ads, and Google Search Console connected to the AI tools PPC teams already use.
+- [Google Ads MCP](https://adplug.app/integrations/google-ads): Search-term audits, pacing checks, budget reviews, MCC workflows, and previewed account changes.
+- [LinkedIn Ads MCP](https://adplug.app/integrations/linkedin-ads): Campaign, audience, creative, and conversion workflows for B2B teams watching CPL closely.
+- [Microsoft Ads MCP server](https://adplug.app/integrations/microsoft-ads): Hosted Microsoft Ads (Bing Ads) MCP server for Claude and ChatGPT. Search-term audits, Performance Max and audience workflows, LinkedIn profile targeting, keyword planning, and Google Ads Search campaigns copied across, with every change previewed. Includes a dated comparison with Microsoft's own read-only MCP server.
+- [Google Search Console MCP server](https://adplug.app/integrations/google-search-console): Hosted Google Search Console MCP server for Claude and ChatGPT. Search Analytics reports, fourteen analyses computed server-side (traffic drops matched to Google ranking updates, declining pages and queries with their causes, striking distance, CTR opportunities, cannibalization, CTR shift, Core Web Vitals), Google Ads search terms set against organic rankings, URL inspection next to a live fetch with inspection history, sitemap audits, and previewed sitemap and property changes. Search Console has its own connector, https://api.adplug.app/mcp/google-search-console, and is not part of the all-platforms URL. States what Google's API can't do, such as Request indexing for normal pages.
+- [Built for PPC teams](https://adplug.app/for): Hub for specialist and agency workflows.
+- [AdPlug for PPC specialists](https://adplug.app/for/ppc-specialists): The MCP that turns your AI into a marketing agent for individual PPC specialists. Real workflows, not demos.
+- [AdPlug for agencies](https://adplug.app/for/agencies): PPC agency software with multi-account, audit log, team seats, and MCC handling.
+- [Google Ads MCP for agencies](https://adplug.app/for/agencies/google-ads-mcp): MCC-first reporting and approved changes for agencies running multiple Google Ads retainers.
+- [Sign up](https://adplug.app/signup): Create an account and connect your first platform.
+- [LinkedIn Ads guide](https://adplug.app/guides/linkedin-ads): How to connect LinkedIn Ads to Claude in five minutes with the AdPlug LinkedIn Ads MCP: setup steps, test prompt, LinkedIn naming quirks, and troubleshooting.
+- [Resources](https://adplug.app/resources): Guides, comparisons, and audits on running Google Ads and LinkedIn Ads through Claude, ChatGPT, and other AI tools, written from real client accounts.
+- [Prompt playbooks](https://adplug.app/playbooks): 30 copy-paste prompt playbooks for Google Ads, LinkedIn Ads, Microsoft Ads, and Google Search Console work in Claude or ChatGPT: senior audits, wasted-spend cleanup, PMax and partner-site exclusions, organic traffic drops, weekly recaps. Each has its own page with the full prompt.
+- [About](https://adplug.app/about): Who builds AdPlug and why: Daniel Popa, 10+ years in PPC, $100M+ managed spend, still running client accounts weekly. Principles, story, and contact.
+- [Connect LinkedIn Ads to ChatGPT guide](https://adplug.app/guides/linkedin-ads-chatgpt): Three ways to connect ChatGPT to LinkedIn Ads (LinkedIn's own read-only beta plugin, reporting-feed connectors, and a full MCP connector), which ChatGPT plans have Developer mode (Plus, Pro, Business, Enterprise, and Edu on the web, per OpenAI's developer documentation; OpenAI's help centre limits write actions to Business, Enterprise, and Edu), the five-step AdPlug setup with screenshots, first prompts, how AdPlug's preview and execute tools and ChatGPT's write confirmation work, and troubleshooting. Last verified 30 September 2026.
+- [Connect Microsoft Ads to Claude guide](https://adplug.app/guides/microsoft-ads): How to connect Microsoft Ads (Bing Ads) to Claude with the AdPlug MCP server: five setup steps with screenshots, first prompts, Google Ads imports, and fixes. No Azure app needed.
+- [Connect Microsoft Ads to ChatGPT guide](https://adplug.app/guides/microsoft-ads-chatgpt): How to connect Microsoft Ads (Bing Ads) to ChatGPT with the AdPlug MCP server: which plans have Developer mode, five setup steps with screenshots, first prompts, and fixes.
+- [Connect Google Search Console to Claude guide](https://adplug.app/guides/google-search-console): Connect Google Search Console to Claude with the AdPlug MCP server: five setup steps with screenshots, first prompts, and fixes. No Google Cloud project needed.
+- [Connect Google Search Console to ChatGPT guide](https://adplug.app/guides/google-search-console-chatgpt): Connect Google Search Console to ChatGPT with the AdPlug MCP server: which plans have Developer mode, five setup steps with screenshots, first prompts, and fixes.
+- [Connect Google Ads to Grok Bot guide](https://adplug.app/guides/google-ads-grok-bot): How to add AdPlug's Google Ads MCP server to Grok Bot: ask a Bot to add a custom MCP server with the address https://api.adplug.app/mcp/google-ads, approve AdPlug's sign-in, and check that it shows under Plugins. Covers who can use Grok Bot (it signs in with a Cursor account), scheduled report prompts, approval before changes, and the route for Grok chat. Confirmed working 1 October 2026.
+- [Connect LinkedIn Ads to Grok Bot guide](https://adplug.app/guides/linkedin-ads-grok-bot): The same setup for LinkedIn Ads with https://api.adplug.app/mcp/linkedin-ads, plus LinkedIn prompts for spend by seniority, pacing, lead forms, audience size, and competitor research through the Ad Library. Confirmed working 1 October 2026.
+- [Connect Google Ads to OpenAI Dots guide](https://adplug.app/guides/google-ads-openai-dots): How to give an OpenAI dot access to Google Ads: who has Dots (Pro outside the EEA, Switzerland, and the UK, and Business Premium), six steps (turn on ChatGPT Developer mode, create the AdPlug app with https://api.adplug.app/mcp/google-ads, connect it in the dot's Plugins), scheduled checks, and rules for changes; write actions depend on the ChatGPT plan. Confirmed on a live dot, 1 October 2026.
+- [Connect LinkedIn Ads to OpenAI Dots guide](https://adplug.app/guides/linkedin-ads-openai-dots): The same six steps for LinkedIn Ads with https://api.adplug.app/mcp/linkedin-ads, and how AdPlug compares with LinkedIn's own read-only plugin for ChatGPT. Confirmed on a live dot, 1 October 2026.
+- [Connect LinkedIn Ads to Hermes Agent guide](https://adplug.app/guides/linkedin-ads-hermes-agent): One command, `hermes mcp add <name> --url https://api.adplug.app/mcp/linkedin-ads --auth oauth`, then OAuth sign-in on a laptop or a VPS (`hermes mcp login` waits five minutes where `add` waits about 30 seconds), scheduled reports with Hermes cron, and approval before changes with `trust: untrusted`. Confirmed working 1 October 2026.
+- [Best MCP servers for marketing in 2026](https://adplug.app/best-mcp-servers-for-marketing): Fifteen MCP servers for marketers grouped by job, each with what it can read, what it can change, and what stands between the AI and the change: AdPlug for Google Ads (16 tools, 149 write operations, execute refuses to run without a preview), LinkedIn Ads (10 tools, 25 write operations, nine ad formats, preview available on request), and Microsoft Ads (11 tools, 93 write operations, Google Ads campaigns copied across, preview available on request), plus a note that the same AdPlug account connects Google Search Console through its own address, Google's official Analytics server (read-only, runs locally), Stape's Google Tag Manager server (hosted or local, can publish), the community Search Console server AminForou/mcp-gsc, DataForSEO, HubSpot's connector (creates and updates, never deletes), PostHog (read-only mode available), Granola (reads only; free plan covers 30 days), Webflow, Tally, Canva, Replicate, and Higgsfield. Sections for PPC specialists and B2B SaaS teams, a job-by-job comparison of AdPlug with Google's own read-only Google Ads server, Microsoft's read-only Microsoft Advertising server, and LinkedIn's read-only ChatGPT plugin, a safety checklist, which to connect first, and which assistants work. By Daniel Popa, founder of AdPlug, the only ads connector listed. Last checked 30 September 2026, Microsoft Ads entry 1 October 2026.
+- [LinkedIn Thought Leader Ads guide](https://adplug.app/linkedin-thought-leader-ads): What Thought Leader Ads are (a member's post sponsored by a company with a Promoted by label), the rules that catch people out (Brand Awareness and Engagement objectives, plus Video Views for video posts only; no post edits; no CTA button except on event posts; author approval required in Campaign Manager; public text, image, video, article, newsletter, and Live Event attendee posts eligible; celebrations, polls, multi-image posts, documents, and reposts ineligible), what they cost (standard Sponsored Content auction, no format surcharge), and how to create one from Claude via AdPlug's LinkedIn Ads MCP by referencing the approved post URN, with a preview before the call executes. Last verified 1 October 2026.
+- [Best LinkedIn Ads MCP servers in 2026](https://adplug.app/best-linkedin-ads-mcp-servers): No official LinkedIn Ads MCP server exists; twelve third-party ones compared on write access, safety model, hosting, and price by the person who built two of them (the open-source danielpopamd/linkedin-ads-mcp and hosted AdPlug), alongside PaidSync, Markifact, Ryze AI, Adspirer, AdKit, Synter, Kiin, Two Minute Reports, Zapier, Windsor.ai, and the reporting bridges. Includes a pre-connect checklist for client accounts, the two dead servers other lists still recommend, and a dated changelog. Last verified 7 September 2026.
+- [Best Google Ads MCP servers in 2026](https://adplug.app/best-google-ads-mcp-servers): Ten Google Ads MCP servers compared on read and write depth, safety model, hosting, and price: Google's official read-only server, AdPlug, NotFair, Adspirer, Markifact, open-source options, and more, with sources for every claim.
+- [Claude vs ChatGPT for Google Ads](https://adplug.app/claude-vs-chatgpt-for-google-ads): Hands-on comparison of Claude and ChatGPT on live Google Ads accounts: audits, negative keywords, safe previewed changes, reporting, and an honest verdict by job.
+- [Connect Claude to Google Ads safely](https://adplug.app/connect-claude-to-google-ads): The honest threat model for giving an AI access to an ad account, and the 7-point safety checklist: OAuth, read-only defaults, previewed writes, audit logs, revocation.
+- [The 30-minute AI Google Ads audit](https://adplug.app/ai-google-ads-audit): Six steps with copy-paste prompts, run on live data: structure scan, search-term waste, ad health, Quality Score, budget pacing, conversion-tracking sanity.
+- [LinkedIn Ads + Claude](https://adplug.app/linkedin-ads-mcp-claude): Why LinkedIn is missing from AI ads tooling and what Claude can do with real read and write access: CPL by seniority, Ad Library research, previewed campaign creation.
+- [Privacy](https://adplug.app/privacy): How AdPlug handles user data and ad-platform credentials.
+- [Terms](https://adplug.app/terms): Terms and conditions.
+- [Google API disclosure](https://adplug.app/google-api-disclosure): How AdPlug uses Google API services and complies with Google's user data policies.
+
+## Capabilities
+
+AdPlug provides MCP (Model Context Protocol) tools for:
+
+- **Google Ads**: List accounts and MCC hierarchy, query campaigns and ad groups, audit search terms, generate keyword ideas and forecasts, run custom GAQL queries, preview account changes, and manage negative keywords and shared sets.
+- **LinkedIn Ads**: List accounts, review campaigns and creatives, inspect audiences and conversions, estimate audience size, look up targeting before committing, prepare account changes, and send up to 5,000 conversion events per call.
+- **Microsoft Ads**: List accounts including manager accounts, run 20 report types (auction insights, LinkedIn profile demographics, change history, period comparisons), research keywords, create and edit search, Performance Max, Audience Network, and Dynamic Search Ads campaigns, set targeting including LinkedIn profiles, manage audiences, conversion goals, offline conversions, and conversion value rules, apply or dismiss Microsoft's recommendations, run up to 100 changes in one previewed batch, and copy Google Ads Search campaigns into Microsoft Ads.
+- **Google Search Console** (its own connector, https://api.adplug.app/mcp/google-search-console): List properties with permission and type, with a 28-day summary of up to 50 properties in one call, run any Search Analytics report (queries, pages, countries, devices, search appearance, dates and hours; web, image, video, news, Discover, and Google News; regex filters; previous-period and year-over-year comparisons), run fourteen server-side analyses (overview, anomalies matched to Google ranking updates, declining pages and queries with their causes, striking distance, CTR opportunities, cannibalization, new and lost queries, brand split, CTR shift, page and query breakdowns, Core Web Vitals from Chrome UX Report data, and paid vs organic with Google Ads search terms, Performance Max included), inspect up to 25 URLs per call next to a live fetch with what changed since the last inspection, audit sitemaps with an estimated indexed share, and preview then apply sitemap submissions and removals and property additions and removals. Google has no API for Request indexing on normal pages, so AdPlug doesn't offer it.
+
+Read tools are on by default. Write tools gate behind a preview-confirm-execute flow, so the AI shows the exact API call before it runs.
+
+## Compatible AI tools
+
+If your tool speaks MCP, AdPlug works:
+
+- Claude Desktop and claude.ai (OAuth via connector)
+- Claude Code (URL token or OAuth)
+- ChatGPT (OAuth only)
+- Cursor (URL or OAuth)
+- VS Code with GitHub Copilot (URL or OAuth)
+- Codex (OAuth only)
+- Windsurf (URL or OAuth)
+- Antigravity (URL or OAuth)
+
+## Example prompts
+
+These are the kinds of questions AdPlug helps answer:
+
+- Run a search-terms audit on the last 30 days. Flag the highest-spend terms with zero conversions and prep them as negative keywords. Preview before adding.
+- Compare my LinkedIn Ads cost per lead against Google Ads paid search for the same offer over the last 90 days.
+- Pause every responsive search ad with CTR below 1.5% and impressions over 1,000 in the last 7 days. Preview before executing.
+- Generate keyword expansion ideas for my top three ad groups, commercial intent only.
+- For client X, generate the slide deck data for our quarterly business review: CPA trend, search term wins, keyword expansion plan.
+- Pull spend, CPA, and ROAS for every customer ID in MCC 123-456-7890 over the last 30 days.
+
+## Technical
+
+- Hosted MCP server at api.adplug.app
+- Secure OAuth-based sign-in for Claude, ChatGPT, Codex, and supported MCP clients
+- URL-token auth for Claude Code, Cursor, VS Code, Windsurf, Antigravity
+- Encrypted platform tokens at rest, traffic encrypted in transit, TLS 1.3 only
+- Multi-tenant, per-user usage logging and audit trail
+- Frontend: adplug.app
+- API: api.adplug.app
+
+## Optional
+
+- [Full content extract](https://adplug.app/llms-full.txt): The full prose, capability lists, FAQs, and prompt examples from every page on adplug.app, in a single file for retrieval-augmented use.
+- [XML sitemap](https://adplug.app/sitemap.xml): Crawlable index of all public pages.

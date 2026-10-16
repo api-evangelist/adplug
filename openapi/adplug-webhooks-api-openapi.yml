@@ -1,0 +1,37 @@
+openapi: 3.2.0
+info:
+  title: AdPlug Webhooks API
+  description: MCP Ads Platform for Performance Marketers
+  version: 0.1.0
+tags:
+- name: Webhooks
+paths:
+  /webhooks/paddle-sandbox:
+    post:
+      summary: Paddle Webhook Sandbox
+      operationId: paddle_webhook_sandbox_webhooks_paddle_sandbox_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Webhooks
+  /webhooks/paddle-live:
+    post:
+      summary: Paddle Webhook Live
+      operationId: paddle_webhook_live_webhooks_paddle_live_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Webhooks
+components:
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

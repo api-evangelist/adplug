@@ -1,0 +1,25 @@
+openapi: 3.2.0
+info:
+  title: AdPlug Health API
+  description: MCP Ads Platform for Performance Marketers
+  version: 0.1.0
+tags:
+- name: Health
+paths:
+  /health:
+    get:
+      summary: Health
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Health
+components:
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

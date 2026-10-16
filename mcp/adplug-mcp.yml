@@ -1,0 +1,7 @@
+generated: '2026-10-16'
+method: derived
+source: "OpenAPI operations derived candidate"
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived

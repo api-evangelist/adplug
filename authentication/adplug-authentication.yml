@@ -1,0 +1,12 @@
+generated: '2026-10-15'
+method: derived
+source: openapi/adplug.json
+summary:
+  types:
+  - http
+schemes:
+- name: HTTPBearer
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/adplug.json

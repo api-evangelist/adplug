@@ -1,0 +1,22 @@
+generated: '2026-10-15'
+method: searched
+source: https://adplug.app
+signals:
+  data_subject_request:
+    - url: https://adplug.app/data-deletion
+      section: "3. Delete your AdPlug account"
+      note: "Provides a mechanism for data subject to request deletion within 30 days."
+      evidence:
+        - source: https://adplug.app/data-deletion
+          http_status: 200
+          fetched: true
+          quote: "Delete your AdPlug account Email support@adplug.app from the address on your account and ask us to delete it. We remove your profile, every ad platform connection, and your usage history within 30 days, and confirm by email once it is done."
+  incident_notification:
+    - url: https://adplug.app/privacy
+      section: "Requests from public authorities"
+      note: "Describes handling of lawful requests, but does not specify breach notification."
+      evidence:
+        - source: https://adplug.app/privacy
+          http_status: 200
+          fetched: true
+          quote: "Requests from public authorities. We disclose personal data to a public authority only when the law requires it. We review every request for legality, challenge requests we believe are unlawful, disclose only the minimum data."

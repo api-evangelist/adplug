@@ -1,0 +1,25 @@
+generated: '2026-10-15'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/adplug.json
+skills:
+- file: skills/adplug-manage-paddle-subscription.md
+  name: adplug-manage-paddle-subscription
+  api: openapi/adplug.json
+  operations:
+  - get_paddle_subscription_api_users__user_id__paddle_subscription_get
+  - paddle_change_plan_api_users__user_id__paddle_change_plan_post
+  - paddle_cancel_current_sub_api_users__user_id__paddle_cancel_current_sub_post
+- file: skills/adplug-oauth-authorization.md
+  name: adplug-oauth-authorization
+  api: openapi/adplug.json
+  operations:
+  - authorize_oauth_google_ads_authorize_get
+  - callback_oauth_google_ads_callback_get
+- file: skills/adplug-oauth-legacy-compat-flow.md
+  name: adplug-oauth-legacy-compat-flow
+  api: openapi/adplug.json
+  operations:
+  - authorize_passthrough_authorize_get
+  - token_passthrough_token_post
+  - register_passthrough_register_post

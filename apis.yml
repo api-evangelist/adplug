@@ -1,23 +1,147 @@
 aid: adplug
 name: AdPlug
-description: 'AdPlug is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://adplug.app/opengraph-image?2e27cb39d30c0e91
+description: AdPlug provides AI‑powered Marketing Cloud Platforms (MCP) that integrate with Google Ads, LinkedIn Ads, Microsoft Ads, and Google
+  Search Console. It enables agencies and PPC specialists to audit, safely edit, and automate campaign data across multiple accounts using large
+  language models like Claude and ChatGPT. The platform offers multi‑account management, audit logs, team seats, and a suite of guides and resources
+  for performance optimization.
 url: https://raw.githubusercontent.com/api-evangelist/adplug/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-15 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-15'
 modified: '2026-10-15'
 tags:
-- Company
-apis: []
+- PPC
+- AI Integration
+- Agency Tools
+- Search Console
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Documentation
+  url: https://adplug.app/guides/google-ads
+- type: AgenticAccess
+  url: agentic-access/adplug-agentic-access.yml
+- type: Plans
+  url: plans/adplug-plans-pricing.yml
+- type: Spectral
+  url: rules/adplug-rules.yml
+- type: JSONLD
+  url: json-ld/adplug-context.jsonld
+- type: Vocabulary
+  url: vocabulary/adplug-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/adplug-data-model.yml
+- type: ErrorCatalog
+  url: errors/adplug-problem-types.yml
+- type: Conformance
+  url: conformance/adplug-conformance.yml
+- type: LLMsTxt
+  url: llms/adplug-llms.txt
+- type: WellKnown
+  url: well-known/adplug-well-known.yml
+- type: Hosts
+  url: hosts/adplug-hosts.yml
+- type: Vendors
+  url: vendors/adplug-vendors.yml
+- type: Authentication
+  url: authentication/adplug-authentication.yml
+- type: DomainSecurity
+  url: security/adplug-domain-security.yml
 - type: Website
   url: https://adplug.app/
+- type: GettingStarted
+  url: https://adplug.app/signup
+- type: GitHubOrganization
+  url: https://github.com/adplug
+- type: Pricing
+  url: https://adplug.app/pricing
+- type: SignUp
+  url: https://adplug.app/signup
+- type: TermsOfService
+  url: https://adplug.app/terms
+- type: PrivacyPolicy
+  url: https://adplug.app/privacy
+- type: Postman
+  url: https://www.postman.com/adplug/workspace
+apis:
+- name: AdPlug API
+  description: >-
+    MCP Ads Platform API providing OAuth endpoints for Google, LinkedIn, Microsoft, and Meta Ads.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  aid: adplug:adplug-api
+- aid: adplug:adplug-health-api
+  name: AdPlug Health API
+  description: The Health API from AdPlug — 1 operation(s) for health.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-health-api-openapi.yml
+- aid: adplug:adplug-mcp-api
+  name: AdPlug MCP API
+  description: The Mcp API from AdPlug — 1 operation(s) for mcp.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - Mcp
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-mcp-api-openapi.yml
+- aid: adplug:adplug-oauth-api
+  name: AdPlug OAuth API
+  description: The oauth API from AdPlug — 13 operation(s) for oauth.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-oauth-api-openapi.yml
+- aid: adplug:adplug-oauth-legacy-compat-api
+  name: AdPlug OAUTH Legacy Compat API
+  description: The oauth-legacy-compat API from AdPlug — 3 operation(s) for oauth-legacy-compat.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - oauth-legacy-compat
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-oauth-legacy-compat-api-openapi.yml
+- aid: adplug:adplug-users-api
+  name: AdPlug Users API
+  description: The Users API from AdPlug — 14 operation(s) for users.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-users-api-openapi.yml
+- aid: adplug:adplug-webhooks-api
+  name: AdPlug Webhooks API
+  description: The Webhooks API from AdPlug — 2 operation(s) for webhooks.
+  humanURL: https://adplug.app/guides/google-ads
+  baseURL: https://api.adplug.app
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/adplug-webhooks-api-openapi.yml
+x-enrichment:
+  date: '2026-10-15'
+  status: enriched
+  artifacts_added: 24
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

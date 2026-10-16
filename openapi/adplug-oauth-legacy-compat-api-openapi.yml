@@ -1,0 +1,49 @@
+openapi: 3.2.0
+info:
+  title: AdPlug OAUTH Legacy Compat API
+  description: MCP Ads Platform for Performance Marketers
+  version: 0.1.0
+tags:
+- name: oauth-legacy-compat
+paths:
+  /authorize:
+    get:
+      tags:
+      - oauth-legacy-compat
+      summary: Authorize Passthrough
+      operationId: authorize_passthrough_authorize_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /token:
+    post:
+      tags:
+      - oauth-legacy-compat
+      summary: Token Passthrough
+      operationId: token_passthrough_token_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /register:
+    post:
+      tags:
+      - oauth-legacy-compat
+      summary: Register Passthrough
+      operationId: register_passthrough_register_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+components:
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

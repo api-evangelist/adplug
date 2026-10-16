@@ -1,0 +1,77 @@
+openapi: 3.2.0
+info:
+  title: AdPlug MCP API
+  description: MCP Ads Platform for Performance Marketers
+  version: 0.1.0
+tags:
+- name: MCP
+paths:
+  /mcp/{mcp_token}/info:
+    get:
+      summary: Mcp Info
+      description: 'Get info about an MCP endpoint (for testing).
+
+
+        Uses track=False so probing this endpoint doesn''t stamp first-auth or
+
+        bookkeep connected clients — otherwise every ping would masquerade as
+
+        a real client connection in telemetry.'
+      operationId: mcp_info_mcp__mcp_token__info_get
+      parameters:
+      - name: mcp_token
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Mcp Token
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - MCP
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

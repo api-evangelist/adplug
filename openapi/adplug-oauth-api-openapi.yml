@@ -1,0 +1,692 @@
+openapi: 3.2.0
+info:
+  title: AdPlug OAuth API
+  description: MCP Ads Platform for Performance Marketers
+  version: 0.1.0
+tags:
+- name: OAuth
+paths:
+  /oauth/google-ads/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: 'Start the Google Ads OAuth flow. Returns a redirect to Google''s consent screen.
+
+
+        `return_to` is an optional same-origin path that the callback will redirect
+
+        to on success/failure instead of the default /dashboard/connections. Used
+
+        by onboarding Step 4 to keep the user inside the 5-step flow.'
+      operationId: authorize_oauth_google_ads_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/google-ads/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: 'Handle the OAuth callback from Google.
+
+
+        Google returns `?error=access_denied&state=...` (no `code`) when the user
+
+        clicks Deny at the consent screen. We mirror the LinkedIn callback shape
+
+        — accept `error` and a no-`code` request, redirect back to the caller''s
+
+        return_to (onboarding) with the error banner — so the user lands on
+
+        Step 4 with a clear message instead of a 422 on the API host.'
+      operationId: callback_oauth_google_ads_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/linkedin-ads/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: 'Start the LinkedIn Ads OAuth flow.
+
+
+        `return_to` is an optional same-origin path that the callback will
+
+        redirect to on success/failure instead of the default
+
+        /dashboard/connections. Used by onboarding Step 4.'
+      operationId: authorize_oauth_linkedin_ads_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/linkedin-ads/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: Handle the OAuth callback from LinkedIn.
+      operationId: callback_oauth_linkedin_ads_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/microsoft-ads/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: 'Start the Microsoft Ads OAuth flow. Returns a redirect to Microsoft''s consent screen.
+
+
+        `return_to` is an optional same-origin path that the callback will redirect
+
+        to on success/failure instead of the default /dashboard/connections. Used by
+
+        onboarding Step 4 to keep the user inside the 5-step flow.'
+      operationId: authorize_oauth_microsoft_ads_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/microsoft-ads/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: 'Handle the OAuth callback from Microsoft.
+
+
+        Entra returns `?error=access_denied&state=...` (no `code`) when the user
+
+        declines consent. We recover return_to from state and bounce back with an
+
+        error banner so the user lands where they started (onboarding or dashboard).'
+      operationId: callback_oauth_microsoft_ads_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/meta-ads/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: Start the Meta Ads OAuth flow.
+      operationId: authorize_oauth_meta_ads_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/meta-ads/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: Handle the OAuth callback from Meta.
+      operationId: callback_oauth_meta_ads_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /meta/data-deletion:
+    post:
+      tags:
+      - OAuth
+      summary: Data Deletion
+      description: 'Meta data-deletion callback.
+
+
+        Fired when a user removes AdPlug from their Facebook "Apps and Websites"
+
+        settings and requests deletion. Drops the Meta connection (and with it the
+
+        encrypted token) for the matching app-scoped user id, then returns the
+
+        status URL + confirmation code Meta requires. Configured in the App
+
+        Dashboard under Settings → Basic → Data Deletion Callback URL.'
+      operationId: data_deletion_meta_data_deletion_post
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Body_data_deletion_meta_data_deletion_post'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/hubspot/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: Start connecting a HubSpot portal, or reconnecting `hub_id`. Redirects to HubSpot's consent screen.
+      operationId: authorize_oauth_hubspot_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      - name: hub_id
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Hub Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/hubspot/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: Store the portal the user just approved AdPlug in.
+      operationId: callback_oauth_hubspot_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/google-search-console/authorize:
+    get:
+      tags:
+      - OAuth
+      summary: Authorize
+      description: Start the Search Console OAuth flow.
+      operationId: authorize_oauth_google_search_console_authorize_get
+      parameters:
+      - name: user_id
+        in: query
+        required: true
+        schema:
+          type: string
+          title: User Id
+      - name: session_token
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Session Token
+      - name: return_to
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Return To
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /oauth/google-search-console/callback:
+    get:
+      tags:
+      - OAuth
+      summary: Callback
+      description: 'Handle Google''s redirect: Deny and errors bounce back with a banner, success stores the grant.'
+      operationId: callback_oauth_google_search_console_callback_get
+      parameters:
+      - name: code
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Code
+      - name: state
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: State
+      - name: error
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+      - name: error_description
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error Description
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    Body_data_deletion_meta_data_deletion_post:
+      properties:
+        signed_request:
+          type: string
+          title: Signed Request
+      type: object
+      required:
+      - signed_request
+      title: Body_data_deletion_meta_data_deletion_post
+  securitySchemes:
+    HTTPBearer:
+      type: http
+      scheme: bearer

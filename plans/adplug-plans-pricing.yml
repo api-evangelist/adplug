@@ -1,0 +1,64 @@
+generated: '2026-10-15'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://adplug.app/pricing
+sources:
+- https://adplug.app/pricing
+name: AdPlug pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Free
+  price_text: $0 forever
+  price: 0
+  features:
+  - 500 Requests, first month
+  - View only AI editing
+  - 1 platform (Google Ads, LinkedIn, Microsoft or Search Console)
+  - Unlimited ad accounts
+  limits:
+  - name: AI requests per month
+    limit_text: 500 first month, 50 after
+  - name: AI edits per month
+    limit_text: View only
+  - name: Team members
+    limit_text: '1'
+- name: Pro
+  price_text: $29 / month
+  price: 29
+  features:
+  - 5,000 AI requests / month
+  - 200 AI edits / month
+  - All platforms, Search Console included
+  - Edits on all platforms
+  - Unlimited ad accounts
+  - Email support
+  limits:
+  - name: Team members
+    limit_text: '1'
+- name: Max
+  price_text: $89 / month
+  price: 89
+  features:
+  - Unlimited AI requests
+  - Unlimited AI edits
+  - All platforms, Search Console included
+  - Edits on all platforms
+  - Unlimited ad accounts
+  - 3 team members
+  - Priority email support
+  limits:
+  - name: Team members
+    limit_text: '3'
+- name: Agency
+  price_text: Custom
+  features:
+  - Custom Unlimited AI requests
+  - Custom Unlimited AI edits
+  - All platforms, Search Console included
+  - Edits on all platforms
+  - Unlimited ad accounts
+  - Per-seat pricing for your team
+  - Dedicated account manager
+  - Data processing agreement
+docs: https://adplug.app/pricing

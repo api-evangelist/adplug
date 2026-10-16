@@ -1,0 +1,459 @@
+generated: '2026-10-15'
+method: generated
+source: openapi/adplug.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 35
+  by_action_class:
+    connected: 20
+    acting: 15
+  by_consequence:
+    read: 20
+    write: 14
+    physical: 1
+  human_in_the_loop_required: 0
+operations:
+- path: /oauth/google-ads/authorize
+  method: get
+  operationId: authorize_oauth_google_ads_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/google-ads/callback
+  method: get
+  operationId: callback_oauth_google_ads_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/linkedin-ads/authorize
+  method: get
+  operationId: authorize_oauth_linkedin_ads_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/linkedin-ads/callback
+  method: get
+  operationId: callback_oauth_linkedin_ads_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/microsoft-ads/authorize
+  method: get
+  operationId: authorize_oauth_microsoft_ads_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/microsoft-ads/callback
+  method: get
+  operationId: callback_oauth_microsoft_ads_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/meta-ads/authorize
+  method: get
+  operationId: authorize_oauth_meta_ads_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/meta-ads/callback
+  method: get
+  operationId: callback_oauth_meta_ads_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /meta/data-deletion
+  method: post
+  operationId: data_deletion_meta_data_deletion_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /oauth/hubspot/authorize
+  method: get
+  operationId: authorize_oauth_hubspot_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/hubspot/callback
+  method: get
+  operationId: callback_oauth_hubspot_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/google-search-console/authorize
+  method: get
+  operationId: authorize_oauth_google_search_console_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /oauth/google-search-console/callback
+  method: get
+  operationId: callback_oauth_google_search_console_callback_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /webhooks/paddle-sandbox
+  method: post
+  operationId: paddle_webhook_sandbox_webhooks_paddle_sandbox_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /webhooks/paddle-live
+  method: post
+  operationId: paddle_webhook_live_webhooks_paddle_live_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /authorize
+  method: get
+  operationId: authorize_passthrough_authorize_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /token
+  method: post
+  operationId: token_passthrough_token_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /register
+  method: post
+  operationId: register_passthrough_register_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /health
+  method: get
+  operationId: health_health_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /mcp/{mcp_token}/info
+  method: get
+  operationId: mcp_info_mcp__mcp_token__info_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/profile
+  method: get
+  operationId: get_user_profile_api_users__user_id__profile_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/connections
+  method: get
+  operationId: get_user_connections_api_users__user_id__connections_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/checkout-opened
+  method: post
+  operationId: checkout_opened_api_users__user_id__checkout_opened_post
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/usage
+  method: get
+  operationId: get_user_usage_api_users__user_id__usage_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/connections/{platform}
+  method: delete
+  operationId: delete_user_connection_api_users__user_id__connections__platform__delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/hubspot-portals
+  method: get
+  operationId: get_hubspot_portals_api_users__user_id__hubspot_portals_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/hubspot-portals/{hub_id}
+  method: patch
+  operationId: rename_hubspot_portal_api_users__user_id__hubspot_portals__hub_id__patch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/hubspot-portals/{hub_id}
+  method: delete
+  operationId: delete_hubspot_portal_api_users__user_id__hubspot_portals__hub_id__delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}
+  method: delete
+  operationId: delete_user_account_api_users__user_id__delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/rotate-mcp-token
+  method: post
+  operationId: rotate_mcp_token_api_users__user_id__rotate_mcp_token_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/paddle-sync-subscription
+  method: post
+  operationId: sync_paddle_subscription_api_users__user_id__paddle_sync_subscription_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/paddle-subscription
+  method: get
+  operationId: get_paddle_subscription_api_users__user_id__paddle_subscription_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/users/{user_id}/paddle-portal-session
+  method: post
+  operationId: create_paddle_portal_session_api_users__user_id__paddle_portal_session_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/paddle-change-plan
+  method: post
+  operationId: paddle_change_plan_api_users__user_id__paddle_change_plan_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/users/{user_id}/paddle-cancel-current-sub
+  method: post
+  operationId: paddle_cancel_current_sub_api_users__user_id__paddle_cancel_current_sub_post
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required

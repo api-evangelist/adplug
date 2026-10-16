@@ -1,0 +1,22 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-data-model.py
+source:
+- openapi/adplug.json
+notation: has_one = property $ref; has_many = array of $ref; belongs_to = <entity>_id field
+summary:
+  entities: 3
+  entities_in_spec: 3
+  relationships: 1
+entities:
+- name: Body_data_deletion_meta_data_deletion_post
+  fields: 1
+- name: HTTPValidationError
+  fields: 1
+- name: ValidationError
+  fields: 3
+relationships:
+- from: HTTPValidationError
+  to: ValidationError
+  type: has_many
+  via: detail

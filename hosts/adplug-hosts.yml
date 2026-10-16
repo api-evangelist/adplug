@@ -1,0 +1,76 @@
+generated: '2026-10-16'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 2
+  other_domain: 0
+  platform: 2
+  roles:
+  - api
+  - collections
+  - source
+  - website
+hosts:
+- host: adplug.app
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - GettingStarted
+  - Pricing
+  - SignUp
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - hosting
+  vendor: vercel
+  registrable_domain: adplug.app
+  role: website
+  relation: own
+- host: api.adplug.app
+  found_by:
+  - apis[]
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - cdn
+  platform: zmumsjdibunozldreevw.supabase.co
+  vendor: cloudflare
+  registrable_domain: adplug.app
+  role: api
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: www.postman.com
+  found_by:
+  - pointer
+  - vendor-detect
+  types:
+  - Postman
+  serves:
+  - api-collections
+  vendor: postman
+  registrable_domain: postman.com
+  role: collections
+  relation: platform

@@ -1,0 +1,49 @@
+{
+  "provider": "adplug",
+  "sources": [
+    "adplug.json"
+  ],
+  "outputs": [
+    "adplug-health-api-openapi.yml",
+    "adplug-mcp-api-openapi.yml",
+    "adplug-users-api-openapi.yml",
+    "adplug-webhooks-api-openapi.yml",
+    "adplug-oauth-api-openapi.yml",
+    "adplug-oauth-legacy-compat-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/adplug.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "adplug.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "adplug.json: tagged paths POST /webhooks/paddle-sandbox -> Webhooks",
+    "adplug.json: tagged paths POST /webhooks/paddle-live -> Webhooks",
+    "adplug.json: tagged paths GET /health -> Health",
+    "adplug.json: tagged paths GET /mcp/{mcp_token}/info -> Mcp",
+    "adplug.json: tagged paths GET /api/users/{user_id}/profile -> Users",
+    "adplug.json: tagged paths GET /api/users/{user_id}/connections -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/checkout-opened -> Users",
+    "adplug.json: tagged paths GET /api/users/{user_id}/usage -> Users",
+    "adplug.json: tagged paths DELETE /api/users/{user_id}/connections/{platform} -> Users",
+    "adplug.json: tagged paths GET /api/users/{user_id}/hubspot-portals -> Users",
+    "adplug.json: tagged paths PATCH /api/users/{user_id}/hubspot-portals/{hub_id} -> Users",
+    "adplug.json: tagged paths DELETE /api/users/{user_id}/hubspot-portals/{hub_id} -> Users",
+    "adplug.json: tagged paths DELETE /api/users/{user_id} -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/rotate-mcp-token -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/paddle-sync-subscription -> Users",
+    "adplug.json: tagged paths GET /api/users/{user_id}/paddle-subscription -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/paddle-portal-session -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/paddle-change-plan -> Users",
+    "adplug.json: tagged paths POST /api/users/{user_id}/paddle-cancel-current-sub -> Users",
+    "adplug.json: declared missing tag: Health",
+    "adplug.json: declared missing tag: Mcp",
+    "adplug.json: declared missing tag: Users",
+    "adplug.json: declared missing tag: Webhooks",
+    "adplug.json: declared missing tag: oauth",
+    "adplug.json: declared missing tag: oauth-legacy-compat",
+    "apis.yml register: written (+6 apis, 7 total)"
+  ],
+  "skipped": []
+}

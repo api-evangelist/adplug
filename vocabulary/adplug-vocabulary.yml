@@ -1,0 +1,25 @@
+generated: '2026-10-16'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/adplug.json
+vocabulary:
+  name: AdPlug Domain Vocabulary
+  description: 'Terms declared by AdPlug''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-16'
+  terms:
+  - term: Body_data_deletion_meta_data_deletion_post
+    definition: 'Object declared by the contract with fields: signed_request.'
+    tags:
+    - Object
+    source: openapi/adplug.json#/components/schemas/Body_data_deletion_meta_data_deletion_post
+  - term: HTTPValidationError
+    definition: 'Object declared by the contract with fields: detail.'
+    tags:
+    - Object
+    source: openapi/adplug.json#/components/schemas/HTTPValidationError
+  - term: ValidationError
+    definition: 'Object declared by the contract with fields: loc, msg, type.'
+    tags:
+    - Object
+    source: openapi/adplug.json#/components/schemas/ValidationError
