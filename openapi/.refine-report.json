@@ -1,7 +1,7 @@
 {
   "provider": "adplug",
   "sources": [
-    "adplug.json"
+    "_original/adplug.json"
   ],
   "outputs": [
     "adplug-health-api-openapi.yml",
@@ -11,12 +11,11 @@
     "adplug-oauth-api-openapi.yml",
     "adplug-oauth-legacy-compat-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi/adplug.json"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "adplug.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "adplug.json: tagged paths POST /webhooks/paddle-sandbox -> Webhooks",
     "adplug.json: tagged paths POST /webhooks/paddle-live -> Webhooks",
@@ -43,7 +42,14 @@
     "adplug.json: declared missing tag: Webhooks",
     "adplug.json: declared missing tag: oauth",
     "adplug.json: declared missing tag: oauth-legacy-compat",
-    "apis.yml register: written (+6 apis, 7 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "adplug-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "adplug-mcp-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "adplug-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "adplug-oauth-legacy-compat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "adplug-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "adplug-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
