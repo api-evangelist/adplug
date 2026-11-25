@@ -90,7 +90,7 @@ Each property below is a page on APIs.io carrying the machine-readable artifact 
 
 Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Adplug Agentic Access](https://apis.io/agentic-access/adplug/adplug-agentic-access/)
+- [AdPlug Agentic Access](https://apis.io/agentic-access/adplug/adplug-agentic-access/)
 
 #### JSON-LD (1)
 
@@ -102,7 +102,7 @@ Linked-data contexts for the provider's vocabulary.
 
 OpenAPI overlays, including conversational phrasing for each operation.
 
-- [Adplug Openapi Overlay](https://apis.io/overlays/adplug/adplug-openapi-overlay/)
+- [AdPlug Openapi Overlay](https://apis.io/overlays/adplug/adplug-openapi-overlay/)
 
 #### Governance rules (1)
 
@@ -114,14 +114,21 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [Adplug Authentication](https://apis.io/security/adplug/adplug-authentication/)
-- [Adplug Domain Security](https://apis.io/security/adplug/adplug-domain-security/)
+- [AdPlug Authentication](https://apis.io/security/adplug/adplug-authentication/)
+- [AdPlug Domain Security](https://apis.io/security/adplug/adplug-domain-security/)
 
-#### Plans and pricing (1)
+#### Plans and pricing (2)
 
 Published plans, tiers and prices.
 
-- [Adplug Plans Pricing](https://apis.io/plans/adplug/adplug-plans-pricing/)
+- [AdPlug Plans Pricing](https://apis.io/plans/adplug/adplug-plans-pricing/)
+- [AdPlug Price Estimates](https://apis.io/plans/adplug/adplug-price-estimates/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [AdPlug Finops](https://apis.io/finops/adplug/adplug-finops/)
 
 ## Where to find this API
 
@@ -138,25 +145,25 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 46.2** — developing · rubric 0.25.0 · scored 2026-10-23
+**Kin Score 46.8** — developing · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
-| Discoverability | 64.3 |
+| Discoverability | 66.7 |
 | Contract quality | 43.5 |
 | Contract governance | 35.6 |
-| Operational transparency | 5.3 |
+| Operational transparency | 4.8 |
 | Developer ergonomics | 39.9 |
-| Access clarity | 76.3 |
+| Access clarity | 83.0 |
 
-**Agent readiness 28.6** — agent-ready
+**Agent readiness 36.3** — agent-ready
 
 | Agent-readiness dimension | Result |
 |---|---|
 | Spec Presence | yes |
 | Agentic Access | derived (partial credit) |
 | Reversibility Documented | documented (partial credit) |
-| MCP Server | — |
+| MCP Server | verified |
 | Auth Clarity | bearer (partial credit) |
 | Idempotency | — |
 | Error Semantics | verified |
@@ -174,8 +181,12 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Agentic Commerce | — |
 | Pagination Ratio | na |
 | Operation Distinctiveness | — |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/adplug/](https://apis.io/providers/adplug/).
 
